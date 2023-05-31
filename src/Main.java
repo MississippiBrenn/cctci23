@@ -17,7 +17,7 @@ public class Main {
         List<String> queries = new ArrayList<>();
         queries.add("abc");
         queries.add("ab");
-        queries.add("ab")
+        queries.add("ab");
 
         //TestData for Chapter 1
         //For bulk scratch test data
@@ -27,6 +27,8 @@ public class Main {
 //        for(String str: onepointone){
 //           System.out.println(chapter1.isUnique(str));
 //        }
+
+
 
 
 

@@ -22,8 +22,14 @@ class Chapter1Test {
         assertTrue("Returns true for 'cat'", chapter1.isUnique("cat"));
         assertFalse("Returns true for 'aaa'", chapter1.isUnique("aaa"));
         assertTrue("Returns true for blank string", chapter1.isUnique(""));
+    }
 
-
+    @Test
+    @DisplayName("Given two strings check to see if one is a permutation of another")
+    void isPermutaton(){
+        assertTrue("returns true for 'a' and 'a'", chapter1.isPermutation("a", "a"));
+        assertFalse("returns false for 'ab' and 'bbb'", chapter1.isPermutation("ab", "bbb"));
+        assertFalse("returns false for 'abc' and 'cac'", chapter1.isPermutation("abc", "cac"));
 
     }
 }
