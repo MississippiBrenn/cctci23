@@ -4,8 +4,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 
 class Chapter1Test {
@@ -30,6 +29,18 @@ class Chapter1Test {
         assertTrue("returns true for 'a' and 'a'", chapter1.isPermutation("a", "a"));
         assertFalse("returns false for 'ab' and 'bbb'", chapter1.isPermutation("ab", "bbb"));
         assertFalse("returns false for 'abc' and 'cac'", chapter1.isPermutation("abc", "cac"));
+
+    }
+
+
+    @Test
+    void URLify() {
+        assertEquals(chapter1.URLify("Mr John Smith"), "Mr%20John%20Smith");
+        assertEquals(chapter1.URLify("Mr JohnSmith "), "Mr%20JohnSmith");
+        assertEquals(chapter1.URLify(" "), "");
+
+
+
 
     }
 }

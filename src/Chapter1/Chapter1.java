@@ -46,6 +46,15 @@ public class Chapter1 {
 
 
     }
+
+    public String URLify(String str1) {
+
+        String[] arrOfStr = str1.split(" ", 0);
+        String joinedString = String.join("%20", arrOfStr);
+        return joinedString;
+
+    }
 }
+
 
 
