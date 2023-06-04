@@ -52,4 +52,11 @@ class Chapter1Test {
         assertTrue("returns true 'bale' and 'ble'", chapter1.editsAway("bale", "ble"));
         assertFalse("returns false 'bale' and 'boole'", chapter1.editsAway("bale", "boole"));
     }
+
+    @Test
+    void stringCompression() {
+        assertEquals(chapter1.stringCompression("aaabbb"), "a3b3");
+        assertEquals(chapter1.stringCompression("bb"), "bb");
+
+    }
 }

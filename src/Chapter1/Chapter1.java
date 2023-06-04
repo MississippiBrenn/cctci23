@@ -92,7 +92,24 @@ public class Chapter1 {
         return true;
     }
 
-    public String stringCompression
+    public String stringCompression(String str1){
+        StringBuilder compressed = new StringBuilder();
+        int count = 0;
+        for(int i = 0; i < str1.length(); i++){
+            count ++;
+            if(i+1 >= str1.length() || str1.charAt(i) != str1.charAt(i+1)){
+                compressed.append(str1.charAt(i));
+                compressed.append(count);
+                count = 0;
+            }
+
+        }
+
+        String finalString = compressed.toString().length() > str1.length()? compressed.toString() : str1;
+
+        return finalString;
+
+    }
 
 }
 
