@@ -54,6 +54,46 @@ public class Chapter1 {
         return joinedString;
 
     }
+
+    public boolean palindromePermutation (String str1){
+        char[] charArray = str1.toCharArray();
+
+        for(int i = 0; i < charArray.length/2; i++){
+            if(charArray[i] != charArray[charArray.length-(i+1)]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean editsAway(String str1, String str2){
+        if(Math.abs(str1.length()-str2.length()) > 1) return false;
+
+        int editsAway = 0;
+        int shortPointer = 0;
+        int longPointer = 0;
+
+        String shorterString = str1.length()>str2.length() ? str2 : str1;
+        String longerString = str1.length()>str2.length() ? str1 : str2;
+
+        while(shortPointer < shorterString.length()){
+            if(shorterString.charAt(shortPointer) == longerString.charAt(longPointer)){
+                shortPointer++;
+                longPointer++;
+            } else if (shorterString.charAt(shortPointer) != longerString.charAt(longPointer)) {
+                longPointer++;
+                editsAway++;
+                System.out.println(editsAway);
+                if(editsAway > 1){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public String stringCompression
+
 }
 
 

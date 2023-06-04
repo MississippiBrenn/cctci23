@@ -38,9 +38,18 @@ class Chapter1Test {
         assertEquals(chapter1.URLify("Mr John Smith"), "Mr%20John%20Smith");
         assertEquals(chapter1.URLify("Mr JohnSmith "), "Mr%20JohnSmith");
         assertEquals(chapter1.URLify(" "), "");
+    }
 
+    @Test
+    void palindromePermutation() {
+        assertTrue("returns true for 'tacocat'", chapter1.palindromePermutation("tacocat"));
+        assertFalse("returns false for 'tacoct'", chapter1.palindromePermutation("tacoat"));
 
+    }
 
-
+    @Test
+    void editsAway() {
+        assertTrue("returns true 'bale' and 'ble'", chapter1.editsAway("bale", "ble"));
+        assertFalse("returns false 'bale' and 'boole'", chapter1.editsAway("bale", "boole"));
     }
 }
