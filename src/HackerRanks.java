@@ -17,4 +17,32 @@ public class HackerRanks {
         }
     return finalCount;
     }
+
+    //diagonal difference given a 2d matrix return the difference of the two diagonals
+    public static int diagonalDifference(List<List<Integer>> matrix){
+        int leftDiagSum = 0;
+        int rightDiagSum = 0;
+
+        for(int i = 0; i < matrix.size(); i++){
+            leftDiagSum += matrix.get(i).get(i);
+            rightDiagSum += matrix.get(i).get(matrix.size()-1-i);
+        }
+
+        int diff = Math.abs(leftDiagSum - rightDiagSum);
+
+        return diff;
+
+    }
+
+    public static boolean panagram(String s){
+      char[] stringArray =   s.toCharArray();
+      List stringList = Arrays.asList(stringArray);
+      StringBuilder alphabet = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
+      for(int i =0; i < alphabet.length(); i++){
+          if(stringList.contains(alphabet.charAt(i))){
+              alphabet.delete(i,i);
+          }
+      }
+      return alphabet.isEmpty();
+    }
 }
