@@ -35,8 +35,63 @@ public class Chapter2 {
 
     // Implement an algorithm to find the kth to last element of a singly linked list
 
+    public static NodeCustom kthToLast(NodeCustom n, int k){
+        NodeCustom kNode = n;
+        while(kNode.next != null){
+
+            for(int i = 0; i <= k; i++ ){
+                kNode = n.next;
+            }
+
+            n = n.next;
+            kNode = kNode.next;
+        }
+        return n;
+    }
+
+    // delete node in middle
+    public static boolean deleteCurrNode (NodeCustom node){
+        if(node == null || node.next == null){
+            return false;
+        }
+        node.data = node.next.data;
+        node.next = node.next.next;
+        return true;
+    }
 
 
+    //partiion a linked list around a value x
+    public static NodeCustom partitionedNodes ( NodeCustom node, int partition){
+
+        NodeCustom beforePartitionStart = null;
+        NodeCustom beforePartitionEnd = null;
+        NodeCustom afterPartitionStart = null;
+        NodeCustom afterPartitionEnd = null;
+
+        while(node.next != null){
+            if(node.data >= partition){
+                if(beforePartitionStart == null) {
+                    beforePartitionStart = node;
+                    beforePartitionEnd = beforePartitionStart;
+                }else {
+                    beforePartitionEnd.next = node;
+                    beforePartitionEnd = node;
+                }
+            } else {
+                if(afterPartitionStart == null){
+                    afterPartitionStart = node;
+                    afterPartitionEnd = afterPartitionStart;
+                }else{
+                    afterPartitionEnd.next = node;
+                    afterPartitionEnd = node;
+                }
+            }
+
+            beforePartitionEnd.next = afterPartitionStart;
+            return beforePartitionStart;
+
+        }
+    }
 
 
 
