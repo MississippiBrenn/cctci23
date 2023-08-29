@@ -34,17 +34,17 @@ public class HackerRanks {
 
     }
 
-    public static boolean panagram(String s){
-      char[] stringArray =   s.toCharArray();
-      List stringList = Arrays.asList(stringArray);
-      StringBuilder alphabet = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
-      for(int i =0; i < alphabet.length(); i++){
-          if(stringList.contains(alphabet.charAt(i))){
-              alphabet.delete(i,i);
-          }
-      }
-      return alphabet.isEmpty();
-    }
+//    public static boolean panagram(String s){
+//      char[] stringArray =   s.toCharArray();
+//      List stringList = Arrays.asList(stringArray);
+//      StringBuilder alphabet = new StringBuilder("abcdefghijklmnopqrstuvwxyz");
+//      for(int i =0; i < alphabet.length(); i++){
+//          if(stringList.contains(alphabet.charAt(i))){
+//              alphabet.delete(i,i);
+//          }
+//      }
+//      return alphabet.isEmpty();
+//    }
 
 
 }

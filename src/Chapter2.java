@@ -61,39 +61,39 @@ public class Chapter2 {
 
 
     //partiion a linked list around a value x
-    public static NodeCustom partitionedNodes ( NodeCustom node, int partition){
-
-        NodeCustom beforePartitionStart = null;
-        NodeCustom beforePartitionEnd = null;
-        NodeCustom afterPartitionStart = null;
-        NodeCustom afterPartitionEnd = null;
-
-        while(node.next != null){
-            if(node.data >= partition){
-                if(beforePartitionStart == null) {
-                    beforePartitionStart = node;
-                    beforePartitionEnd = beforePartitionStart;
-                }else {
-                    beforePartitionEnd.next = node;
-                    beforePartitionEnd = node;
-                }
-            } else {
-                if(afterPartitionStart == null){
-                    afterPartitionStart = node;
-                    afterPartitionEnd = afterPartitionStart;
-                }else{
-                    afterPartitionEnd.next = node;
-                    afterPartitionEnd = node;
-                }
-            }
-
-            beforePartitionEnd.next = afterPartitionStart;
-            return beforePartitionStart;
-
-        }
-    }
 
 
+//    public static NodeCustom partitionedNodes ( NodeCustom node, int partition){
+//
+//        NodeCustom beforePartitionStart = null;
+//        NodeCustom beforePartitionEnd = null;
+//        NodeCustom afterPartitionStart = null;
+//        NodeCustom afterPartitionEnd = null;
+//
+//        while(node.next != null){
+//            if(node.data >= partition){
+//                if(beforePartitionStart == null) {
+//                    beforePartitionStart = node;
+//                    beforePartitionEnd = beforePartitionStart;
+//                }else {
+//                    beforePartitionEnd.next = node;
+//                    beforePartitionEnd = node;
+//                }
+//            } else {
+//                if(afterPartitionStart == null){
+//                    afterPartitionStart = node;
+//                    afterPartitionEnd = afterPartitionStart;
+//                }else{
+//                    afterPartitionEnd.next = node;
+//                    afterPartitionEnd = node;
+//                }
+//            }
+//
+//            beforePartitionEnd.next = afterPartitionStart;
+//            return beforePartitionStart;
+//
+//        }
+//    }
 
 }
 

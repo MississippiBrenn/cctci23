@@ -1,8 +1,5 @@
 package Chapter1;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Chapter1 {
     //1.1
     public boolean isUnique(String str){
@@ -11,41 +8,58 @@ public class Chapter1 {
         if(str.length()>128) return false;
 
         // no additional data structure nested loop Time On2 Space Ox
-        for(int i = 0; i < str.length()-1; i++){
-            char curr = str.charAt(i);
-            System.out.println(i);
-            for(int j = i+1; j < str.length(); j++){
-                char checking = str.charAt(j);
-                System.out.println(j);
-                if(curr == checking ){
-                    return false;
-                }
-            }
-        }
+//        for(int i = 0; i < str.length()-1; i++){
+//            char curr = str.charAt(i);
+//            System.out.println(i);
+//            for(int j = i+1; j < str.length(); j++){
+//                char checking = str.charAt(j);
+//                System.out.println(j);
+//                if(curr == checking ){
+//                    return false;
+//                }
+//            }
+//        }
 
         //additional data structure assign to set and compare lengths
+        boolean[] chars = new boolean[128];
+
+        for(char c: str.toCharArray()){
+            int charIndex = c;
+            if(chars[charIndex]) return false;
+            chars[charIndex] = true;
+        }
+
         return true;
     }
 
+    public String sort(String str1){
+        char[] char_set = str1.toCharArray();
+
+        java.util.Arrays.sort(char_set);
+        return new String(char_set);
+    }
     public boolean isPermutation(String str1, String str2){
-        if(str1.equals(str2)) return true;
-        if(str1.length() != str2.length()) return false;
+        return str1.length() == str2.length() ? sort(str1).equals(sort(str2)): false;
 
-        Set<Character> set = new HashSet<>();
-
-        for(int i = 0; i < str1.length(); i++){
-            set.add(str1.charAt(i));
-        }
-
-        for(int j = 0; j< str2.length(); j++) {
-            if (!set.contains(str2.charAt(j))) {
-                return false;
-            }
-        }
-        return true;
+//        if(str1.equals(str2)) return true;
+//        if(str1.length() != str2.length()) return false;
+//
+//        Set<Character> set = new HashSet<>();
+//
+//        for(int i = 0; i < str1.length(); i++){
+//            set.add(str1.charAt(i));
+//        }
+//
+//        for(int j = 0; j< str2.length(); j++) {
+//            if (!set.contains(str2.charAt(j))) {
+//                return false;
+//            }
+//        }
+//        return true;
 
 
     }
+
 
     public String URLify(String str1) {
 
